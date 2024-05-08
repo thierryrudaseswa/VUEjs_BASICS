@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+    body{
+        background: #eee;
+        max-width: 960px;
+        margin: 20px auto;
+      }
+      p,h3,ul{
+        margin: 0;
+        padding: 0;
+      }
+      li{
+        list-style-type: none;
+        background: #fff;
+        margin: 20px auto;
+        padding: 10px 20px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div class="" V-if="showdet">
+        <p>{{title}} - {{age}} - {{author}}</p>
+
+        <div class="" V-on:click="age++">increase age</div>
+        <div class="" V-on:click="age--">decrease age</div>
+      </div>
+      <button V-on:click="showDetails">
+        <span V-if="showdet">hide details</span>
+        <span V-if="!showdet">show details</span>
+      </button>
+
+      <br>
+      <div class="box" @mouseover="handleEvent"></div>
+      <div class="box" @mouseleave="handleEvent"></div>
+      <div class="box" @dblclick="handleEvent"></div>
+      <div class="box" @mousemove="handleMouseEvent"> {{x}} {{y}} position</div>
+       
+        
+    <br>
+
+
+<ul>
+  <li V-for="book in books">
+    <h3>{{book.title}}</h3>
+    <p>{{book.author}}</p>
+  </li>
+</ul>
+      </div>
+    
+    <script src="app.js"></script>
+  </body>
+</html>
